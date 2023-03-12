@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://umlpav6j11bp"]
+
+[ext_resource type="Script" path="res://godot/bomb/explosion_cast.gd" id="1_fm7dk"]
+
+[node name="explosion" type="Node2D"]
+
+[node name="casts" type="Node2D" parent="."]
+texture_filter = 1
+texture_repeat = 2
+
+[node name="up" type="RayCast2D" parent="casts"]
+use_parent_material = true
+rotation = 3.14159
+script = ExtResource("1_fm7dk")
+
+[node name="down" type="RayCast2D" parent="casts"]
+use_parent_material = true
+script = ExtResource("1_fm7dk")
+
+[node name="left" type="RayCast2D" parent="casts"]
+use_parent_material = true
+rotation = 1.5708
+script = ExtResource("1_fm7dk")
+
+[node name="right" type="RayCast2D" parent="casts"]
+use_parent_material = true
+rotation = 4.71239
+script = ExtResource("1_fm7dk")

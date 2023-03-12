@@ -16,3 +16,5 @@ position = Vector2(10, -14)
 [node name="game_camera" parent="level/level_1/player" instance=ExtResource("2_rep0o")]
 
 [node name="placed_bombs" type="Node2D" parent="level"]
+
+[node name="placed_explosions" type="Node2D" parent="level"]

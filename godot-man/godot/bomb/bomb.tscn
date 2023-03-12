@@ -9,6 +9,9 @@ size = Vector2(32, 32)
 
 [node name="bomb" type="Node2D"]
 
+[node name="bomb_logic" type="Node2D" parent="."]
+script = ExtResource("3_ui10p")
+
 [node name="bomb_collision_body" type="StaticBody2D" parent="."]
 
 [node name="sprite_2d" type="Sprite2D" parent="bomb_collision_body"]
@@ -23,6 +26,3 @@ script = ExtResource("2_4g3ap")
 
 [node name="bomb_detection_box" type="CollisionShape2D" parent="bomb_detection_area"]
 shape = SubResource("RectangleShape2D_fohp2")
-
-[node name="bomb_logic" type="Node2D" parent="."]
-script = ExtResource("3_ui10p")

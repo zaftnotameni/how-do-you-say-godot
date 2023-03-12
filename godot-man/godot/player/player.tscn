@@ -10,7 +10,7 @@
 [ext_resource type="Script" path="res://godot/player/player_bombs.gd" id="7_vrckb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q7vyu"]
-size = Vector2(32, 32)
+size = Vector2(30, 30)
 
 [sub_resource type="Animation" id="Animation_mld8k"]
 length = 0.001

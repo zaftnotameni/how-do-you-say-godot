@@ -19,7 +19,6 @@ func place_bomb():
   requested_bomb_placement.change(false)
 
 func do_physics(delta: float) -> void:
-  print(requested_bomb_placement.current)
   requested_bomb_placement.change_if_was_false(player_input.input_bombs())
   if (requested_bomb_placement.current and can_place_bombs()):
     place_bomb()

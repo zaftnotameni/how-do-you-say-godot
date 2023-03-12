@@ -19,6 +19,10 @@ run/max_fps=30
 boot_splash/show_image=false
 config/icon="res://icon.svg"
 
+[autoload]
+
+XX="*res://godot/lib/global_definitions.gd"
+
 [display]
 
 window/size/viewport_width=640
@@ -28,7 +32,6 @@ window/size/window_height_override=1080
 window/energy_saving/keep_screen_on=false
 window/vsync/vsync_mode=2
 window/stretch/mode="canvas_items"
-window/stretch/scale=3.0
 
 [editor]
 
