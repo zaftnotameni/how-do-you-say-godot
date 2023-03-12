@@ -13,3 +13,7 @@ func change(new_value) -> LastCurrent:
   last = current
   current = new_value
   return self
+
+func change_if_was_false(new_value) -> LastCurrent:
+  if current: return self
+  return change(new_value)

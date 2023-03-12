@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://b8t1et8gbuint"]
+
+[ext_resource type="Texture2D" uid="uid://c2djxadftjk03" path="res://art/bomb.png" id="1_se72v"]
+[ext_resource type="Script" path="res://godot/bomb/bomb_collision_box.gd" id="2_4g3ap"]
+[ext_resource type="Script" path="res://godot/bomb/bomb_logic.gd" id="3_ui10p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fohp2"]
+size = Vector2(32, 32)
+
+[node name="bomb" type="Node2D"]
+
+[node name="bomb_collision_body" type="StaticBody2D" parent="."]
+
+[node name="sprite_2d" type="Sprite2D" parent="bomb_collision_body"]
+texture = ExtResource("1_se72v")
+
+[node name="bomb_collision_box" type="CollisionShape2D" parent="bomb_collision_body"]
+shape = SubResource("RectangleShape2D_fohp2")
+disabled = true
+script = ExtResource("2_4g3ap")
+
+[node name="bomb_detection_area" type="Area2D" parent="."]
+
+[node name="bomb_detection_box" type="CollisionShape2D" parent="bomb_detection_area"]
+shape = SubResource("RectangleShape2D_fohp2")
+
+[node name="bomb_logic" type="Node2D" parent="."]
+script = ExtResource("3_ui10p")

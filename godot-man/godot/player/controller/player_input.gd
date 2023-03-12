@@ -6,3 +6,5 @@ func input_vector() -> Vector2 :
   var input = Vector2(x, y).limit_length(1)
   return input
 
+func input_bombs() -> bool:
+  return Input.is_action_just_pressed('p1_place_bomb')

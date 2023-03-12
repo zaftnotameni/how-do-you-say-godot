@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cbnee3radxsb7"]
+[gd_scene load_steps=16 format=3 uid="uid://cbnee3radxsb7"]
 
 [ext_resource type="Script" path="res://godot/player/player_body.gd" id="1_ai57i"]
 [ext_resource type="Script" path="res://godot/player/player_logic.gd" id="2_4qtql"]
@@ -7,9 +7,10 @@
 [ext_resource type="Script" path="res://godot/player/controller/player_movement.gd" id="5_4qgnw"]
 [ext_resource type="Script" path="res://godot/player/player_stats.gd" id="6_p0n0i"]
 [ext_resource type="Script" path="res://godot/player/player_animation.gd" id="7_rvqm3"]
+[ext_resource type="Script" path="res://godot/player/player_bombs.gd" id="7_vrckb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q7vyu"]
-size = Vector2(8, 8)
+size = Vector2(32, 32)
 
 [sub_resource type="Animation" id="Animation_mld8k"]
 length = 0.001
@@ -141,12 +142,11 @@ _data = {
 script = ExtResource("1_ai57i")
 
 [node name="player_sprite" type="Sprite2D" parent="player_body"]
-scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_oe6bf")
 hframes = 3
 region_rect = Rect2(0, 0, 32, 32)
 
-[node name="collision_shape_2d" type="CollisionShape2D" parent="player_body"]
+[node name="player_collision_box" type="CollisionShape2D" parent="player_body"]
 shape = SubResource("RectangleShape2D_q7vyu")
 
 [node name="player_logic" type="Node2D" parent="player_body"]
@@ -160,6 +160,9 @@ script = ExtResource("5_4qgnw")
 
 [node name="player_stats" type="Node2D" parent="player_body/player_logic"]
 script = ExtResource("6_p0n0i")
+
+[node name="player_bombs" type="Node2D" parent="player_body/player_logic"]
+script = ExtResource("7_vrckb")
 
 [node name="player_animation" type="AnimationPlayer" parent="player_body"]
 libraries = {

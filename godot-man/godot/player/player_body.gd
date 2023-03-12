@@ -4,5 +4,4 @@ extends CharacterBody2D
 
 func _ready() -> void:
   motion_mode = MOTION_MODE_FLOATING
-  up_direction
   player_logic.set_physics_process(true)
