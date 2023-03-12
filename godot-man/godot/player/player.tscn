@@ -1,0 +1,36 @@
+[gd_scene load_steps=8 format=3 uid="uid://cbnee3radxsb7"]
+
+[ext_resource type="Texture2D" uid="uid://b1a624dvm5xiw" path="res://icon.svg" id="1_56bfs"]
+[ext_resource type="Script" path="res://godot/player/player_body.gd" id="1_ai57i"]
+[ext_resource type="Script" path="res://godot/player/player_logic.gd" id="2_4qtql"]
+[ext_resource type="Script" path="res://godot/player/controller/player_input.gd" id="4_62t8e"]
+[ext_resource type="Script" path="res://godot/player/controller/player_movement.gd" id="5_4qgnw"]
+[ext_resource type="Script" path="res://godot/player/player_stats.gd" id="6_p0n0i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q7vyu"]
+size = Vector2(16, 16)
+
+[node name="player" type="Node2D"]
+
+[node name="player_body" type="CharacterBody2D" parent="."]
+script = ExtResource("1_ai57i")
+
+[node name="player_sprite" type="Sprite2D" parent="player_body"]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_56bfs")
+
+[node name="collision_shape_2d" type="CollisionShape2D" parent="player_body"]
+shape = SubResource("RectangleShape2D_q7vyu")
+
+[node name="player_logic" type="Node2D" parent="player_body"]
+script = ExtResource("2_4qtql")
+
+[node name="player_input" type="Node2D" parent="player_body/player_logic"]
+script = ExtResource("4_62t8e")
+
+[node name="player_movement" type="Node2D" parent="player_body/player_logic"]
+script = ExtResource("5_4qgnw")
+
+[node name="player_stats" type="Node2D" parent="player_body/player_logic"]
+script = ExtResource("6_p0n0i")
+speed = 150
