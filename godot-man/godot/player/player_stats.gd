@@ -1,3 +1,3 @@
 extends Node2D
 
-@export var speed := 10
+@export var speed := 50
