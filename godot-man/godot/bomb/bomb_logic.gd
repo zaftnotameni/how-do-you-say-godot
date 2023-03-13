@@ -5,10 +5,13 @@ extends Node2D
 const ExplosionScene := preload('res://godot/bomb/explosion.tscn')
 
 func _ready() -> void:
+  setup_explosion()
   get_tree().create_timer(3).timeout.connect(explode)
 
-func explode():
+func setup_explosion() -> void:
   var explosion := ExplosionScene.instantiate()
   explosion.global_position = bomb.global_position
   placed_explosions.add_child(explosion)
+
+func explode():
   bomb.queue_free()

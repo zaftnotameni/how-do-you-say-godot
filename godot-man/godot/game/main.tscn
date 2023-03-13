@@ -1,8 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://ddcq8sfasuq1e"]
+[gd_scene load_steps=5 format=3 uid="uid://ddcq8sfasuq1e"]
 
 [ext_resource type="PackedScene" uid="uid://bp5kukrqf1dqf" path="res://godot/level/level_1.tscn" id="1_ocnim"]
 [ext_resource type="PackedScene" uid="uid://cbnee3radxsb7" path="res://godot/player/player.tscn" id="1_ti3d5"]
 [ext_resource type="PackedScene" uid="uid://cddjjpvdafvuh" path="res://godot/camera/game_camera.tscn" id="2_rep0o"]
+
+[sub_resource type="Environment" id="Environment_m6aah"]
+background_mode = 3
+glow_enabled = true
+glow_bloom = 0.05
+glow_blend_mode = 0
+glow_hdr_threshold = 0.8
 
 [node name="main" type="Node2D"]
 
@@ -18,3 +25,6 @@ position = Vector2(10, -14)
 [node name="placed_bombs" type="Node2D" parent="level"]
 
 [node name="placed_explosions" type="Node2D" parent="level"]
+
+[node name="world_environment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_m6aah")

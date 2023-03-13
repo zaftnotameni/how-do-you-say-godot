@@ -1,16 +1,37 @@
 extends RayCast2D
 
-@export var power : int = 2
+const power : int = 4
+const countdown : int = 2
 
 @onready var level := find_parent('level')
+@onready var explosion := find_parent('*explosion*')
+@onready var explosion_line := explosion.find_child('explosion_%s' % name)
+var exploded = false
 
 func _ready() -> void:
-  target_position.y = power * XX.tile_size
-  get_tree().create_timer(3).timeout.connect(func(): queue_free())
+  target_position.y = power * XX.tile_size + XX.half_tile_size
+  each_explosion_line(func(e : Node2D): e.set_power(power))
+  each_explosion_line(func(e : Node2D): e.hide())
+  get_tree().create_timer(countdown).timeout.connect(func(): start_explosion())
+
+func cleanup_explosion() -> void:
+  queue_free()
+  each_explosion_line(func(e : Node2D): e.queue_free())
+  explosion.queue_free()
+
+func start_explosion():
+  exploded = true
+  each_explosion_line(func(e : Node2D): e.show_explosion())
+  get_tree().create_timer(countdown).timeout.connect(func(): cleanup_explosion())
+
+func each_explosion_line(fn : Callable) -> void:
+  fn.call(explosion_line)
 
 func _physics_process(delta: float) -> void:
+  var collider = get_collider()
   if is_colliding():
-    explode(get_collider())
+    if (collider is TileMap): each_explosion_line(func(e): e.stop_explosion_at(get_collision_point()))
+    if (exploded): explode(collider)
 
 func explode(thing) -> void:
   if (thing is TileMap): explode_tile_map(thing)

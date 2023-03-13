@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://b7qm0yxshekdk"]
+[gd_scene load_steps=4 format=3 uid="uid://b7qm0yxshekdk"]
 
+[ext_resource type="Script" path="res://godot/bomb/explosion_line.gd" id="1_8v0th"]
 [ext_resource type="Material" uid="uid://cmgjb5wptme1n" path="res://godot/bomb/explosion_material.tres" id="1_v8tph"]
 [ext_resource type="Texture2D" uid="uid://ra8i7o8ob7p3" path="res://art/explosion.png" id="2_e6d6t"]
 
 [node name="explosion_line" type="Node2D"]
+script = ExtResource("1_8v0th")
 
 [node name="explosion_path" type="Line2D" parent="."]
 texture_filter = 1
