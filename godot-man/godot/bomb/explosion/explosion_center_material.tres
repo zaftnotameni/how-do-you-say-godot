@@ -1,6 +1,6 @@
-[gd_resource type="ShaderMaterial" load_steps=14 format=3 uid="uid://dsojuql7hhymm"]
+[gd_resource type="ShaderMaterial" load_steps=14 format=3 uid="uid://hk1igxx3g4bt"]
 
-[ext_resource type="Shader" path="res://godot/bomb/explosion_center.gdshader" id="1_l4djd"]
+[ext_resource type="Shader" path="res://godot/bomb/explosion/explosion_center.gdshader" id="1_l4djd"]
 
 [sub_resource type="Gradient" id="Gradient_sv52m"]
 

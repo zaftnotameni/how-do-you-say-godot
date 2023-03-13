@@ -1,6 +1,6 @@
-[gd_resource type="ShaderMaterial" load_steps=18 format=3 uid="uid://cmgjb5wptme1n"]
+[gd_resource type="ShaderMaterial" load_steps=18 format=3 uid="uid://kqkyx8e4mxml"]
 
-[ext_resource type="Shader" path="res://godot/bomb/explosion.gdshader" id="1_iubts"]
+[ext_resource type="Shader" path="res://godot/bomb/explosion/explosion.gdshader" id="1_iubts"]
 
 [sub_resource type="Gradient" id="Gradient_nn4ax"]
 offsets = PackedFloat32Array(0)

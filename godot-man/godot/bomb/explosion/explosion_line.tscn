@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bhd70o8h63bt7"]
+
+[ext_resource type="Script" path="res://godot/bomb/explosion/explosion_line.gd" id="1_f6eph"]
+[ext_resource type="Material" uid="uid://kqkyx8e4mxml" path="res://godot/bomb/explosion/explosion_material.tres" id="2_bo56i"]
+[ext_resource type="Texture2D" uid="uid://ra8i7o8ob7p3" path="res://art/explosion.png" id="3_n5rlk"]
+
+[node name="explosion_line" type="Node2D"]
+script = ExtResource("1_f6eph")
+
+[node name="explosion_path" type="Line2D" parent="."]
+texture_filter = 1
+texture_repeat = 2
+material = ExtResource("2_bo56i")
+points = PackedVector2Array(0, 0, 0, 32)
+width = 32.0
+default_color = Color(0.665604, 1.96133e-06, 4.33177e-07, 1)
+texture = ExtResource("3_n5rlk")
+texture_mode = 2
+begin_cap_mode = 2

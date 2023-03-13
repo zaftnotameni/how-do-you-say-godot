@@ -31,7 +31,6 @@ texture_region_size = Vector2i(32, 32)
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_yxg68"]
 resource_name = "tiles_being_destroyed"
 scenes/1/scene = ExtResource("4_1hpd5")
-scenes/1/display_placeholder = ExtResource("4_1hpd5")
 
 [sub_resource type="TileSet" id="TileSet_dwgh2"]
 tile_size = Vector2i(32, 32)
