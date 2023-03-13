@@ -38,6 +38,10 @@ window/stretch/mode="canvas_items"
 naming/node_name_num_separator=3
 naming/node_name_casing=2
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg")
+
 [input]
 
 p1_left={
