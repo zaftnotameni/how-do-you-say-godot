@@ -15,7 +15,9 @@ func can_place_bombs() -> bool:
 
 func place_bomb():
   var bomb_scene := BombScene.instantiate()
-  bomb_scene.global_position = player_body.global_position
+  bomb_scene.power = player_stats.bomb_power
+  bomb_scene.countdown = player_stats.bomb_countdown
+  bomb_scene.global_position = XX.snap_to_grid(player_body.global_position)
   placed_bombs.add_child(bomb_scene)
   requested_bomb_placement.change(false)
 

@@ -66,6 +66,17 @@ p1_place_bomb={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="zawarudo_indestructible"
+2d_physics/layer_2="zawarudo_destructible"
+2d_physics/layer_3="players"
+2d_physics/layer_4="enemies"
+2d_physics/layer_5="explosions"
+2d_physics/layer_6="bombs"
+2d_physics/layer_7="collectibles"
+2d_physics/layer_8="logical_areas"
+
 [physics]
 
 2d/default_gravity=0.0

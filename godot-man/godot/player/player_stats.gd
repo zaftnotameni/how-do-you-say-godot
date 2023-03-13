@@ -1,3 +1,5 @@
 extends Node2D
 
-@export var speed := 75
+var speed := 75
+var bomb_power := 2
+var bomb_countdown := 3

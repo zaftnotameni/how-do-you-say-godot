@@ -12,9 +12,6 @@ func stop_explosion_at(point : Vector2) -> void:
   stopped_explosion = true
   var p := to_local(point)
   explosion_path.set_point_position(1, p)
-  print(p)
-  print(p.length())
-  print(p.length() < XX.half_tile_size)
   if (p.length() < XX.half_tile_size): explosion_path.hide()
 
 func set_power(power : int) -> void:

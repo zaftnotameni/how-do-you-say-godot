@@ -1,18 +1,18 @@
 extends RayCast2D
 
-const power : int = 4
-const countdown : int = 2
-
 @onready var level := find_parent('level')
 @onready var explosion := find_parent('*explosion*')
 @onready var explosion_line := explosion.find_child('explosion_%s' % name)
+@onready var power : int = explosion.power
+@onready var countdown : int = explosion.countdown
+
 var exploded = false
 
 func _ready() -> void:
   target_position.y = power * XX.tile_size + XX.half_tile_size
   each_explosion_line(func(e : Node2D): e.set_power(power))
   each_explosion_line(func(e : Node2D): e.hide())
-  get_tree().create_timer(countdown).timeout.connect(func(): start_explosion())
+  explosion.on_explosion_started.connect(start_explosion)
 
 func cleanup_explosion() -> void:
   queue_free()
