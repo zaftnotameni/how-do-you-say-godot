@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://b7qm0yxshekdk"]
+[gd_scene load_steps=3 format=3 uid="uid://b7qm0yxshekdk"]
 
 [ext_resource type="Material" uid="uid://cmgjb5wptme1n" path="res://godot/bomb/explosion_material.tres" id="1_v8tph"]
+[ext_resource type="Texture2D" uid="uid://ra8i7o8ob7p3" path="res://art/explosion.png" id="2_e6d6t"]
 
 [node name="explosion_line" type="Node2D"]
 
@@ -11,6 +12,5 @@ material = ExtResource("1_v8tph")
 points = PackedVector2Array(0, 0, 0, 32)
 width = 32.0
 default_color = Color(0.665604, 1.96133e-06, 4.33177e-07, 1)
+texture = ExtResource("2_e6d6t")
 texture_mode = 2
-end_cap_mode = 2
-round_precision = 4
