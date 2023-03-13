@@ -9,7 +9,7 @@ extends RayCast2D
 var exploded = false
 
 func _ready() -> void:
-  target_position.y = power * XX.tile_size + XX.half_tile_size
+  target_position.y = power * XX.tile_size + XX.half_tile_size - 2.0
   each_explosion_line(func(e : Node2D): e.set_power(power))
   each_explosion_line(func(e : Node2D): e.hide())
   explosion.on_explosion_started.connect(start_explosion)
@@ -30,7 +30,10 @@ func each_explosion_line(fn : Callable) -> void:
 func _physics_process(delta: float) -> void:
   var collider = get_collider()
   if is_colliding():
-    if (collider is TileMap): each_explosion_line(func(e): e.stop_explosion_at(get_collision_point()))
+    if (collider is TileMap):
+      var coords : Vector2 = collider.get_coords_for_body_rid(get_collider_rid())
+      var data = collider.get_cell_tile_data(2, coords)
+      each_explosion_line(func(e): e.stop_explosion_at(get_collision_point(), data))
     if (exploded): explode(collider)
 
 func explode(thing) -> void:

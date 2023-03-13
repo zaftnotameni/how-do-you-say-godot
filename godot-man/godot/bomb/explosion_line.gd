@@ -7,12 +7,13 @@ var stopped_explosion = false
 func show_explosion():
   show()
 
-func stop_explosion_at(point : Vector2) -> void:
+func stop_explosion_at(point : Vector2, data : TileData = null) -> void:
   if (stopped_explosion): return
   stopped_explosion = true
-  var p := to_local(point)
-  explosion_path.set_point_position(1, p)
-  if (p.length() < XX.half_tile_size): explosion_path.hide()
+  var p := to_local(point).round()
+  var dir = explosion_path.get_point_position(0).direction_to(explosion_path.get_point_position(1))
+  var pp = dir * XX.tile_size if data != null else Vector2.ZERO
+  explosion_path.set_point_position(1, p + pp)
 
 func set_power(power : int) -> void:
   var original_point := explosion_path.get_point_position(1)
