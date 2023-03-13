@@ -9,8 +9,8 @@
 [ext_resource type="Script" path="res://godot/player/player_animation.gd" id="7_rvqm3"]
 [ext_resource type="Script" path="res://godot/player/player_bombs.gd" id="7_vrckb"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_q7vyu"]
-size = Vector2(30, 30)
+[sub_resource type="CircleShape2D" id="CircleShape2D_pp0q8"]
+radius = 14.0
 
 [sub_resource type="Animation" id="Animation_mld8k"]
 length = 0.001
@@ -149,7 +149,7 @@ hframes = 3
 region_rect = Rect2(0, 0, 32, 32)
 
 [node name="player_collision_box" type="CollisionShape2D" parent="player_body"]
-shape = SubResource("RectangleShape2D_q7vyu")
+shape = SubResource("CircleShape2D_pp0q8")
 
 [node name="player_logic" type="Node2D" parent="player_body"]
 script = ExtResource("2_4qtql")

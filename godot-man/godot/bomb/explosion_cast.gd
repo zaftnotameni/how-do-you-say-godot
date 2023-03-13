@@ -13,16 +13,16 @@ func _ready() -> void:
   each_explosion_line(func(e : Node2D): e.set_power(power))
   each_explosion_line(func(e : Node2D): e.hide())
   explosion.on_explosion_started.connect(start_explosion)
+  explosion.on_explosion_cleanup.connect(cleanup_explosion)
 
 func cleanup_explosion() -> void:
   queue_free()
   each_explosion_line(func(e : Node2D): e.queue_free())
-  explosion.queue_free()
 
 func start_explosion():
   exploded = true
   each_explosion_line(func(e : Node2D): e.show_explosion())
-  get_tree().create_timer(countdown).timeout.connect(func(): cleanup_explosion())
+
 
 func each_explosion_line(fn : Callable) -> void:
   fn.call(explosion_line)
@@ -38,5 +38,5 @@ func explode(thing) -> void:
 
 func explode_tile_map(tiles : TileMap) -> void:
   var coords := tiles.get_coords_for_body_rid(get_collider_rid())
-  tiles.set_cell(0, coords)
+  tiles.set_cell(2, coords)
   queue_free()

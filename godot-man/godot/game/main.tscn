@@ -18,7 +18,7 @@ glow_hdr_threshold = 0.8
 [node name="level_1" parent="level" instance=ExtResource("1_ocnim")]
 
 [node name="player" parent="level/level_1" instance=ExtResource("1_ti3d5")]
-position = Vector2(10, -14)
+position = Vector2(48, 47)
 
 [node name="game_camera" parent="level/level_1/player" instance=ExtResource("2_rep0o")]
 
