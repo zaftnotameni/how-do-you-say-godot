@@ -1,0 +1,6 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://b43ns7xomg7ur"]
+
+[ext_resource type="Shader" path="res://godot/level/tile_background_shader.gdshader" id="1_4p0vk"]
+
+[resource]
+shader = ExtResource("1_4p0vk")

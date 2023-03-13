@@ -5,7 +5,6 @@ extends RayCast2D
 @onready var explosion_line := explosion.find_child('explosion_%s' % name)
 @onready var power : int = explosion.power
 @onready var countdown : int = explosion.countdown
-const MeltingMaterial = preload('res://godot/bomb/tile_melting_material.tres')
 const DestructibleTileScene = preload('res://godot/level/destructible_tile.tscn')
 
 var exploded = false
