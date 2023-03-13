@@ -1,0 +1,6 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://bkra5i1udfv75"]
+
+[ext_resource type="Shader" path="res://godot/bomb/tile_melting_shader.gdshader" id="1_clc14"]
+
+[resource]
+shader = ExtResource("1_clc14")

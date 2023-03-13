@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwqk2i7rhwa6d"]
+
+[ext_resource type="Texture2D" uid="uid://cftvtjpfu24vc" path="res://art/tiles.png" id="1_lncwj"]
+[ext_resource type="Material" uid="uid://bkra5i1udfv75" path="res://godot/bomb/tile_melting_material.tres" id="1_ncq7r"]
+
+[node name="destructible_tile" type="Sprite2D"]
+z_index = 5
+texture_filter = 1
+texture_repeat = 2
+material = ExtResource("1_ncq7r")
+texture = ExtResource("1_lncwj")

@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://brqw231yfsnpy"]
+[gd_scene load_steps=10 format=3 uid="uid://brqw231yfsnpy"]
 
 [ext_resource type="Texture2D" uid="uid://cftvtjpfu24vc" path="res://art/tiles.png" id="1_gahhw"]
 [ext_resource type="Texture2D" uid="uid://dmj83k81excvk" path="res://art/background_tiles.png" id="2_iecor"]
 [ext_resource type="Texture2D" uid="uid://bc6y85hte0i1m" path="res://art/indestructible_tiles.png" id="3_4gh2c"]
+[ext_resource type="PackedScene" uid="uid://cwqk2i7rhwa6d" path="res://godot/level/destructible_tile.tscn" id="4_1hpd5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_smc1c"]
 texture = ExtResource("1_gahhw")
@@ -27,6 +28,11 @@ texture_region_size = Vector2i(32, 32)
 0:0/0/physics_layer_0/angular_velocity = 0.0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_yxg68"]
+resource_name = "tiles_being_destroyed"
+scenes/1/scene = ExtResource("4_1hpd5")
+scenes/1/display_placeholder = ExtResource("4_1hpd5")
+
 [sub_resource type="TileSet" id="TileSet_dwgh2"]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 3
@@ -34,6 +40,7 @@ physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_smc1c")
 sources/1 = SubResource("TileSetAtlasSource_u7xub")
 sources/2 = SubResource("TileSetAtlasSource_v7l4i")
+sources/3 = SubResource("TileSetScenesCollectionSource_yxg68")
 
 [node name="tiles" type="TileMap"]
 tile_set = SubResource("TileSet_dwgh2")

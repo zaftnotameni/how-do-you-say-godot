@@ -5,6 +5,8 @@ extends RayCast2D
 @onready var explosion_line := explosion.find_child('explosion_%s' % name)
 @onready var power : int = explosion.power
 @onready var countdown : int = explosion.countdown
+const MeltingMaterial = preload('res://godot/bomb/tile_melting_material.tres')
+const DestructibleTileScene = preload('res://godot/level/destructible_tile.tscn')
 
 var exploded = false
 
@@ -41,5 +43,6 @@ func explode(thing) -> void:
 
 func explode_tile_map(tiles : TileMap) -> void:
   var coords := tiles.get_coords_for_body_rid(get_collider_rid())
+  await explosion.on_explosion_cleanup
   tiles.set_cell(2, coords)
   queue_free()
