@@ -1,0 +1,53 @@
+[gd_resource type="ShaderMaterial" load_steps=14 format=3 uid="uid://dsojuql7hhymm"]
+
+[ext_resource type="Shader" path="res://godot/bomb/explosion_center.gdshader" id="1_l4djd"]
+
+[sub_resource type="Gradient" id="Gradient_sv52m"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_1ct3s"]
+noise_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_8xsrp"]
+generate_mipmaps = false
+seamless = true
+color_ramp = SubResource("Gradient_sv52m")
+noise = SubResource("FastNoiseLite_1ct3s")
+
+[sub_resource type="Gradient" id="Gradient_i58y1"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_gdl1x"]
+noise_type = 3
+fractal_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_rwags"]
+generate_mipmaps = false
+seamless = true
+color_ramp = SubResource("Gradient_i58y1")
+noise = SubResource("FastNoiseLite_gdl1x")
+
+[sub_resource type="Gradient" id="Gradient_xtt5k"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_aydmt"]
+noise_type = 5
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_nxswf"]
+generate_mipmaps = false
+seamless = true
+color_ramp = SubResource("Gradient_xtt5k")
+noise = SubResource("FastNoiseLite_aydmt")
+
+[sub_resource type="Gradient" id="Gradient_qpwmb"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ehml7"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_e45fh"]
+seamless = true
+color_ramp = SubResource("Gradient_qpwmb")
+noise = SubResource("FastNoiseLite_ehml7")
+
+[resource]
+shader = ExtResource("1_l4djd")
+shader_parameter/noise_r = SubResource("NoiseTexture2D_e45fh")
+shader_parameter/noise_g = SubResource("NoiseTexture2D_nxswf")
+shader_parameter/noise_b = SubResource("NoiseTexture2D_rwags")
+shader_parameter/noise_a = SubResource("NoiseTexture2D_8xsrp")

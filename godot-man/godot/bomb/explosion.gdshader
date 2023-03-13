@@ -59,15 +59,14 @@ vec2 scroll_on_y(vec2 uv, float s, float t) {
 vec2 scroll_on_x(vec2 uv, float s, float t) {
   return vec2(uv.x + (t * s), uv.y);
 }
-
+const vec4 red = vec4(1.0, 0.0, 0.0, 1.0);
+const vec4 yellow = vec4(1.0, 1.0, 0.0, 1.0);
 void fragment() {
   reset_color(UV, COLOR);
-  vec4 tex_c1 = texture(color1, UV);
-  vec4 tex_c2 = texture(color2, UV);
   vec4 tex_a = texture(noise_a, scroll_on_x(UV, -2.0, TIME));
   vec4 tex_b = texture(noise_b, scroll_on_x(UV, -3.0, TIME));
   COLOR.a = smoothstep(0.3, 0.6, closeness_to_center(UV.y) + tex_a.r / 3.0);
-  vec4 target_color = mix(tex_c2, tex_c1, closeness_to_center(UV.y));
+  vec4 target_color = mix(red, yellow, closeness_to_center(UV.y));
   COLOR.rgb = target_color.rgb;
   COLOR.rgb += vec3(smoothstep(0.89, 0.9, tex_b.r/2.0 + closeness_to_center(UV.y)));
 }
