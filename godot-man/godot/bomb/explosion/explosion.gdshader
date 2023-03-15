@@ -1,4 +1,5 @@
 shader_type canvas_item;
+render_mode blend_add;
 uniform sampler2D color1;
 uniform sampler2D color2;
 uniform sampler2D screen_texture : hint_screen_texture;
