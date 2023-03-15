@@ -10,7 +10,7 @@ const BombScene := preload('res://godot/bomb/bomb.tscn')
 var requested_bomb_placement := LastCurrent.new().of(false)
 
 func can_place_bombs() -> bool:
-  return placed_bombs.get_child_count() <= 0
+  return placed_bombs.get_child_count() < player_stats.max_bombs_at_same_time
 
 func place_bomb():
   var bomb_scene := BombScene.instantiate()

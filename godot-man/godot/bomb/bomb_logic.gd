@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var bomb : Node2D = find_parent('bomb')
+@onready var bomb : Node2D = find_parent('*bomb*')
 @onready var placed_explosions := find_parent('level').find_child('placed_explosions')
 @onready var power : int = bomb.power
 @onready var countdown : int = bomb.countdown

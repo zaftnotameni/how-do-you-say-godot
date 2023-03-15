@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://bfbqs23g4juqx"]
+[gd_scene load_steps=12 format=3 uid="uid://bfbqs23g4juqx"]
 
 [ext_resource type="Texture2D" uid="uid://cftvtjpfu24vc" path="res://art/tiles.png" id="1_gahhw"]
 [ext_resource type="Material" uid="uid://b43ns7xomg7ur" path="res://godot/level/tile_background_material.tres" id="2_dpcif"]
 [ext_resource type="Texture2D" uid="uid://dmj83k81excvk" path="res://art/background_tiles.png" id="2_iecor"]
 [ext_resource type="Texture2D" uid="uid://bc6y85hte0i1m" path="res://art/indestructible_tiles.png" id="3_4gh2c"]
 [ext_resource type="PackedScene" path="res://godot/level/destructible_tile.tscn" id="4_1hpd5"]
+[ext_resource type="Script" path="res://godot/level/tiles.gd" id="6_5gw83"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_smc1c"]
 texture = ExtResource("1_gahhw")
@@ -62,3 +63,4 @@ layer_2/y_sort_enabled = false
 layer_2/y_sort_origin = 0
 layer_2/z_index = 0
 layer_2/tile_data = PackedInt32Array()
+script = ExtResource("6_5gw83")
