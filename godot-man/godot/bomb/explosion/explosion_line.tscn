@@ -17,3 +17,4 @@ default_color = Color(0.665604, 1.96133e-06, 4.33177e-07, 1)
 texture = ExtResource("3_n5rlk")
 texture_mode = 2
 begin_cap_mode = 2
+end_cap_mode = 2
